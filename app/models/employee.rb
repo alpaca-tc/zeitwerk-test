@@ -1,3 +1,3 @@
-class Employee < ApplicationRecord
+class Employee
   Tenant
 end
