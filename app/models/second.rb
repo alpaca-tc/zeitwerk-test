@@ -1,0 +1,3 @@
+class Second
+  First
+end

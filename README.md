@@ -17,7 +17,7 @@ bundle exec rails runner '[Thread.new { Rails.application.reloader.wrap { Tenant
 ### server
 
 ```
-bundle exec rails server -p 12345
+bundle exec rails server -p 3000
 ```
 
 ```
