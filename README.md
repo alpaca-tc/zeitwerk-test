@@ -10,8 +10,8 @@ bundle exec rails db:setup
 ### console
 
 ```
-# hangs!!!
-bundle exec rails runner '[Thread.new { Tenant }, Thread.new { Employee }].each(&:join)'
+# deadlock occurs
+bundle exec rails runner '[Thread.new { Rails.application.reloader.wrap { Tenant } }, Thread.new { Rails.application.reloader.wrap { Employee } }].each(&:join)'
 ```
 
 ### server
@@ -21,6 +21,6 @@ bundle exec rails server -p 12345
 ```
 
 ```
-# hangs!!!
+# hang!!! deadlock occurs
 ruby test.rb
 ```
